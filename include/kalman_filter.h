@@ -1,6 +1,6 @@
 #ifndef KALMAN_FILTER_H_
 #define KALMAN_FILTER_H_
-#include "Eigen/Dense"
+#include "../src/Eigen/Dense"
 
 class KalmanFilter {
 public:
@@ -64,6 +64,10 @@ public:
    */
   void UpdateEKF(const Eigen::VectorXd &z);
 
+private:
+  const double two_pi_ = 2 * M_PI;
+
+  double NormalizeAngle(const double angle);
 };
 
 #endif /* KALMAN_FILTER_H_ */

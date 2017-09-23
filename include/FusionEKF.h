@@ -2,7 +2,7 @@
 #define FusionEKF_H_
 
 #include "measurement_package.h"
-#include "Eigen/Dense"
+#include "../src/Eigen/Dense"
 #include <vector>
 #include <string>
 #include <fstream>
@@ -32,6 +32,8 @@ public:
   KalmanFilter ekf_;
 
 private:
+  const double noise_ax_ = 9;
+  const double noise_ay_ = 9;
   // check whether the tracking toolbox was initialized or not (first measurement)
   bool is_initialized_;
 
